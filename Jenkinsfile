@@ -19,6 +19,7 @@ pipeline {
                 set PATH=%PYTHON_PATH%;%PATH%
                 pip install -r requirements.txt
                 '''
+                
             }
         }
  
@@ -29,11 +30,12 @@ pipeline {
             steps {
                 bat '''
                 set PATH=%PYTHON_PATH%;%PATH%
-                sonar-scanner -Dsonar.projectKey=test110 ^
+                sonar-scanner -Dsonar.projectKey=jen ^
                   -Dsonar.sources=. ^
                   -Dsonar.host.url=http://localhost:9000 ^
                   -Dsonar.token=%SONAR_TOKEN%
                 '''
+                
             }
         }
     }
